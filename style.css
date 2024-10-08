@@ -1,0 +1,52 @@
+		body{
+			color:white;
+			border: 5px white solid;
+			padding: 10px 10px;
+			margin: 15px 15px;
+		}
+
+		#main-header{
+			text-align: center;
+			font-family: sans-serif;
+		}
+
+		.container{
+			width:100%;
+			display: flex;
+			justify-content: center;
+		}
+
+		.main-table{
+			width: 80%;
+		}
+
+		.main-table td{
+			border: 1px solid white;
+			padding: 10px 10px;
+		}
+
+		.project-description{
+			width: 70%;
+		}
+
+		.project-image{
+			width: 30%;
+			text-align: center;
+		}
+
+		iframe{
+			width: 90%;
+			height: auto;
+		}
+
+		.news-tag{
+			background-color: red;
+			position: absolute;
+			padding: 5px 5px;
+			left: 10%;
+			transform: rotate(-45deg);
+		}
+
+		a{
+			color: red;
+		}
