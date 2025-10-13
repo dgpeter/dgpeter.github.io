@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>My Portofolio</title>
+
+	<style type="text/css">
+		
+		/* declarator{ property: value } */
+
+		body{
+			color:white;
+		}
+
+		h1{
+			text-align: center;
+		}
+
+		#title{
+			font-size: 2em;
+		}
+
+		.table-container{
+			width: 100%;
+			display: flex;
+			justify-content: center;
+		}
+
+		.project-table{
+			width: 80%;
+			border: 2px solid;
+		}
+
+		td{
+			border: 2px solid;
+		}
+		.project-description{
+			width: 70%;
+		}
+
+		.project-image{
+			width: 30%;
+			text-align: center;
+		}
+
+		iframe{
+			width: auto;
+			height: auto;
+		}
+
+		.news-tag{
+			background-color: red;
+			width: 5%;
+			position: absolute;
+			top:10px;
+			left:-1%;
+
+			transform: rotate(-45deg);
+
+			animation-name: myAnimation;
+			animation-duration: 4s;
+			animation-iteration-count: infinite;
+		}
+
+		@keyframes myAnimation{
+			0%	{background-color:red;}
+			25% {background-color: yellow;}
+			50% {background-color: pink;}
+			100%{background-color: blue}
+		}
+
+		.news-tag-row{
+			position: relative;
+
+		}
+
+		.p-title{
+			color: red;
+			will-change: transform;
+			transition: transform 0.3s;
+		}
+
+		.p-title:hover{
+			transform: translate(10%) scale(1.2);
+		}
+
+	</style>
+</head> 
+<body bgcolor="#4a4740">
+
+<img src="TAB_allwhite.png" width="25%">
+<h1 id="title">My Projects</h1>
+<hr>
+
+<div class ="table-container">
+	<table class="project-table"> 
+		<tr class="news-tag-row">
+
+			<td class="project-description"> 
+
+
+			<h3 class="p-title"> Project title </h3>
+
+			<div class="news-tag"> News </div>
+
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+			<td class="project-image"> <img src="https://placehold.co/300x200"></td>
+		</tr>
+		<tr>
+			<td class="project-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+		<td class="project-image"> 
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/H764YiYKV_g?si=z3nv0mo-pOBbIpYM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></td>
+		</tr>
+	</table>
+</div>
+<table border=2>
+	<thead>
+		<th>Project</th>
+		<th>Project</th>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Comp1INTRO</td>
+			<td>September 2025</td>
+		</tr>
+		<tr>
+			<td><a download href="project.py">My amazing python code!</a></td>
+			<td> 2026 </td>
+		</tr>
+	</tbody>
+</table>
+
+<h2>My Skills</h2>
+<ol>
+	<li>Python Expert</li>
+	<li>Linux Expert</li>
+</ol>
+
+<video controls src="examplevid.mp4" width="40%">
+
+</video>
+
+
+
+
+<h3>My favourite Movies</h3>
+<ul>
+	<li>Whiplash</li>
+	<li>IT</li>
+	<li>Avengers</li>
+</ul>
+</body>
+</html>
