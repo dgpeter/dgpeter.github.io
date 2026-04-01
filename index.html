@@ -14,7 +14,7 @@
   --gold:#F0AB00;--gold-dim:rgba(240,171,0,0.13);
   --purple:#9B30E0;--purple-hi:#B44FFF;--purple-dim:rgba(155,48,224,0.11);
   --uom:#660099;
-  --t-thermal:#FF6B35;--t-mr:#B06BFF;--t-drone:#00D4AA;--t-event:#4CC9F0;--t-phone:#7BC67E;
+  --t-thermal:#FF6B35;--t-mr:#B06BFF;--t-drone:#00D4AA;--t-event:#4CC9F0;
 }
 body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-serif;min-height:100vh}
 
@@ -60,15 +60,15 @@ body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-ser
 .callout strong{color:var(--text)}
 
 /* ── TEAM CARDS ── */
-.tgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:11px;margin-bottom:20px}
+.tgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;margin-bottom:20px}
 .tcard{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px;cursor:pointer;transition:all .2s;position:relative;overflow:hidden}
 .tcard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
 .tcard:hover{border-color:var(--border-hi);background:var(--card2);transform:translateY(-2px)}
 .tcard.expanded{grid-column:1/-1;cursor:default;transform:none}.tcard.expanded:hover{transform:none}
 .thermal::before{background:var(--t-thermal)}.mr::before{background:var(--t-mr)}
-.drone::before{background:var(--t-drone)}.event::before{background:var(--t-event)}.phone::before{background:var(--t-phone)}
+.drone::before{background:var(--t-drone)}.event::before{background:var(--t-event)}
 .tlabel{font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px}
-.thermal .tlabel{color:var(--t-thermal)}.mr .tlabel{color:var(--t-mr)}.drone .tlabel{color:var(--t-drone)}.event .tlabel{color:var(--t-event)}.phone .tlabel{color:var(--t-phone)}
+.thermal .tlabel{color:var(--t-thermal)}.mr .tlabel{color:var(--t-mr)}.drone .tlabel{color:var(--t-drone)}.event .tlabel{color:var(--t-event)}
 .ticon{font-size:26px;display:block;margin-bottom:8px}
 .ttool{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;line-height:1.2}
 .texp{display:none;margin-top:16px;grid-template-columns:1fr 1fr;gap:20px}
@@ -91,7 +91,7 @@ body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-ser
 .assign-input::placeholder{color:var(--muted);opacity:.6}
 .assign-btn{padding:9px 18px;background:var(--uom);color:#fff;border:none;border-radius:8px;font-family:'Syne',sans-serif;font-weight:700;font-size:13px;cursor:pointer;transition:all .2s;white-space:nowrap}
 .assign-btn:hover{background:var(--purple)}
-.team-rosters{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:12px}
+.team-rosters{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}
 .roster{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:10px 12px;min-height:72px}
 .roster-label{font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:7px}
 .roster-member{font-size:12px;color:var(--text);padding:3px 0;border-bottom:1px solid var(--border);line-height:1.4}
@@ -103,7 +103,7 @@ body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-ser
 .assign-clear:hover{color:var(--text)}
 
 /* ── MINI TEAMS ── */
-.miniteams{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:20px}
+.miniteams{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:20px}
 .mt{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:10px;font-size:11px;line-height:1.5}
 .mt-name{font-weight:600;margin-bottom:2px}.mt-sub{color:var(--muted)}
 
@@ -354,7 +354,7 @@ body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-ser
     <div class="team-rosters" id="rosters"></div>
   </div>
 
-  <div class="ss" style="margin-top:6px">Click any team card to reveal their brief — each team only uses their own brief that was assigned.</div>
+  <div class="ss" style="margin-top:6px">Click any team card to reveal their brief — each team only sees their own.</div>
   <div class="tgrid">
 
     <div class="tcard thermal" id="c-thermal" onclick="toggleTeam('thermal')">
@@ -421,23 +421,8 @@ body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-ser
       </div>
     </div>
 
-    <div class="tcard phone" id="c-phone" onclick="toggleTeam('phone')">
-      <div class="tlabel">Team Epsilon</div><span class="ticon">📱</span>
-      <div class="ttool">Smartphone</div>
-      <div class="texp" id="e-phone">
-        <div><div class="tproblem"><strong style="color:var(--t-phone)">Your Challenge — Accessibility Platform</strong><br><br>
-          The University is committed to being <strong>genuinely accessible to every student</strong>. We're building the next generation of our accessibility services — and we want real-time, crowdsourced, student-powered data at its heart: live lift status, hearing loop availability, flexible seating, and more.<br><br>
-          Your smartphone is always connected, always with you. It has a camera, GPS, accelerometer, and microphone. What platform could you build that makes this campus work for everyone?
-        </div></div>
-        <div>
-          <div class="htitle">Angles to explore</div>
-          <ul class="hlist"><li>Crowdsourced reporting</li><li>Push alerts</li><li>AR accessibility overlay</li><li>Voice-first interface</li><li>QR room-status scans</li><li>Student volunteer network</li></ul>
-          <button class="close-btn" onclick="closeTeam(event,'phone')">↑ collapse</button>
-        </div>
-      </div>
-    </div>
 
-  </div>
+  </div><!-- end tgrid -->
   <div class="nav-buttons">
     <button class="btn btn-outline" onclick="goTo(0)">← Back</button>
     <button class="btn btn-gold" onclick="goTo(2)">Begin Development →</button>
@@ -466,7 +451,6 @@ body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-ser
     <div class="mt" style="border-top:3px solid var(--t-mr)"><div class="mt-name" style="color:var(--t-mr)">Beta</div>🥽 Mixed Reality<br><span class="mt-sub">First week experience</span></div>
     <div class="mt" style="border-top:3px solid var(--t-drone)"><div class="mt-name" style="color:var(--t-drone)">Gamma</div>🚁 Drone<br><span class="mt-sub">Campus flow</span></div>
     <div class="mt" style="border-top:3px solid var(--t-event)"><div class="mt-name" style="color:var(--t-event)">Delta</div>⚡ Event Camera<br><span class="mt-sub">Night responsiveness</span></div>
-    <div class="mt" style="border-top:3px solid var(--t-phone)"><div class="mt-name" style="color:var(--t-phone)">Epsilon</div>📱 Smartphone<br><span class="mt-sub">Accessibility platform</span></div>
   </div>
   <div class="nav-buttons">
     <button class="btn btn-outline" onclick="goTo(1)">← Teams</button>
@@ -526,11 +510,6 @@ body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-ser
           <div class="dock-label" style="color:var(--t-event)">⚡ Delta</div>
           <div class="dock-tool">Event Camera</div>
         </div>
-        <div class="dock-card phone" id="dock-phone" draggable="true"
-          ondragstart="dockDragStart(event,'phone')" ondragend="dockDragEnd(event)">
-          <div class="dock-label" style="color:var(--t-phone)">📱 Epsilon</div>
-          <div class="dock-tool">Smartphone</div>
-        </div>
         <div class="dock-hint">
           <strong>How it works</strong><br>
           Drag a team card onto the map to place it. Drag again to add another card for the same team — place as many as you need. Click × on any card to remove it. Drag placed cards to reposition.
@@ -576,7 +555,6 @@ body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-ser
       </div>
       <div class="hub-right">
         <div class="hub-node hn-event"><span class="hi">⚡</span><div><div class="hl">Event Camera</div><div class="hs">Night-time motion</div></div></div>
-        <div class="hub-node hn-phone"><span class="hi">📱</span><div><div class="hl">Smartphone</div><div class="hs">Accessibility layer</div></div></div>
         <div class="hub-node" style="background:rgba(155,48,224,.1);border-color:rgba(155,48,224,.3);color:var(--purple-hi)"><span class="hi">👋</span><div><div class="hl">Gesture Interface</div><div class="hs">Hands-free control</div></div></div>
       </div>
     </div>
@@ -629,7 +607,7 @@ body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-ser
     </div>
     <div class="asl-result">
       <div class="asl-rlabel">The Result</div>
-      <div class="asl-rtext">A system that can watch someone signing in <strong>American Sign Language</strong> and translate it into <em>written English in real time</em> — with no human interpreter needed. Built by a student, not a research lab, during their final year here.</div>
+      <div class="asl-rtext">A system that can watch someone signing in <strong>American Sign Language</strong> and translate it into <em>written English in real time</em> — with no human interpreter needed. Built by a student, not a research lab, during their second year here.</div>
     </div>
     <div class="asl-take">
       <div class="asl-take-t">The bigger point</div>
@@ -693,11 +671,11 @@ let gVis=false;
 function toggleReveal(){gVis=!gVis;document.getElementById('gContent').classList.toggle('visible',gVis)}
 
 /* ─── ASSIGN ─── */
-const TN=['Alpha','Beta','Gamma','Delta','Epsilon'];
-const TC=['var(--t-thermal)','var(--t-mr)','var(--t-drone)','var(--t-event)','var(--t-phone)'];
-const TE=['🌡️','🥽','🚁','⚡','📱'];
-let roster=[[],[],[],[],[]];
-let perTeamCap=[5,5,5,5,5];
+const TN=['Alpha','Beta','Gamma','Delta'];
+const TC=['var(--t-thermal)','var(--t-mr)','var(--t-drone)','var(--t-event)'];
+const TE=['🌡️','🥽','🚁','⚡'];
+let roster=[[],[],[],[]];
+let perTeamCap=[5,5,5,5];
 function renderRosters(){
   document.getElementById('rosters').innerHTML=TN.map((n,i)=>{
     const m=roster[i];
@@ -716,16 +694,14 @@ function setCount(){
   const n=parseInt(inp.value,10);
   const la=document.getElementById('lastAssigned');
   if(!n||n<1||n>25){la.textContent='Enter a number between 1 and 25.';la.style.color='#FF4D55';return;}
-  // Distribute slots as evenly as possible: compute per-team cap
-  const base=Math.floor(n/5);
-  const extra=n%5;
-  // Build a shuffled list of team indices weighted by their cap
-  // Each team gets base slots, and 'extra' random teams get one more
+  // Distribute slots as evenly as possible across 4 teams
+  const base=Math.floor(n/4);
+  const extra=n%4;
   perTeamCap=[];
-  const indices=[0,1,2,3,4];
+  const indices=[0,1,2,3];
   // Shuffle to randomly decide which teams get the extra slot
   for(let i=indices.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[indices[i],indices[j]]=[indices[j],indices[i]];}
-  for(let i=0;i<5;i++)perTeamCap[i]=base+(i<extra?1:0);
+  for(let i=0;i<4;i++)perTeamCap[i]=base+(i<extra?1:0);
   la.textContent=`Ready for ${n} students — ${TN.map((t,i)=>`${TE[i]} ${perTeamCap[i]}`).join('  ·  ')}`;
   la.style.color='var(--t-drone)';
   inp.value='';
@@ -738,7 +714,7 @@ function assignStudent(){
   const la=document.getElementById('lastAssigned');
   // Pick randomly from teams that still have capacity
   const available=[];
-  for(let i=0;i<5;i++){
+  for(let i=0;i<4;i++){
     const cap=perTeamCap[i]||5;
     if(roster[i].length<cap)available.push(i);
   }
@@ -749,7 +725,7 @@ function assignStudent(){
   la.style.color=TC[picked];
   inp.value='';inp.focus();renderRosters();
 }
-function clearAll(){roster=[[],[],[],[],[]];perTeamCap=[5,5,5,5,5];document.getElementById('lastAssigned').textContent='';document.getElementById('studentCount').value='';renderRosters()}
+function clearAll(){roster=[[],[],[],[]];perTeamCap=[5,5,5,5];document.getElementById('lastAssigned').textContent='';document.getElementById('studentCount').value='';renderRosters()}
 
 /* ─── MAP DRAG-DROP ─── */
 const teamMeta={
@@ -874,7 +850,7 @@ function loadMapImage(e){
 
 /* ─── RESET ALL ─── */
 function resetAll(){
-  resetTimer();roster=[[],[],[],[],[]];perTeamCap=[5,5,5,5,5];
+  resetTimer();roster=[[],[],[],[]];perTeamCap=[5,5,5,5];
   document.getElementById('lastAssigned').textContent='';
   document.querySelectorAll('.tcard').forEach(c=>c.classList.remove('expanded'));
   document.querySelectorAll('textarea').forEach(t=>t.value='');
